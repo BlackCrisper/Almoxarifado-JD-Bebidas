@@ -1,0 +1,46 @@
+@model .Models.Produto
+
+@{
+    ViewBag.Title = "Exibir";
+}
+
+<h2>EXibindo<h2>
+
+        <div>
+            <form action="/Produto/Exibir" method="post">
+                <div>
+                    <class ="form-group">
+                        <label>Descrição</label>
+                        <label>@Model.</label>
+                </div>
+                <div>
+                    <class ="form-group">
+                        <label>Mínimo</label>
+                        <label>@Model.</label>
+                </div>
+                <div>
+                    <class ="form-group">
+                        <label>Máximo</label>
+                        <label>@Model.</label>
+                </div>
+                <div>
+                    <class ="form-group">
+                        <label>Estoque</label>
+                        <label>@Model.</label>
+                </div>
+
+
+                <div>
+
+
+                </div>
+
+                <div>
+                    <p><a href="/produto/index" class="btn btn-primary">Voltar &raquo;</a></p>
+
+                </div>
+
+
+
+            </form>
+        </div>

@@ -1,0 +1,61 @@
+@model .Models.Produto
+
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editando</h2>
+
+<div>
+    <form action="/Produto/Edit?id=@Model.ProID" method="post">
+        <div>
+            <class ="form-group">
+                <label for="descricao">Descrição</label>
+                <input type="text" class="form-control"
+                       maxlength="100" id="descricao" name="descricao"
+                       value="@Model.ProDescricao"
+                       required />
+        </div>
+        <div>
+            <class ="form-group">
+                <label for="maximo">Máximo</label>
+                <input type="number" class="form-control"
+                       id="maximo" name="maximo" min="0"
+                       value="@Model.ProMaximo"
+                       
+                       required />
+                
+        </div>
+        <div>
+            <class ="form-group">
+                <label for="minimo">Mínimo</label>
+                <input type="number" class="form-control"
+                       id="minimo" name="minimo" min="0"
+                       value="@Model.ProMinimo"
+                       required />
+
+                <div>
+                    <class ="form-group">
+                        <label for="estoque">Estoque</label>
+                        <input type="number" class="form-control"
+                               id="estoque" name="estoque" min="0"
+                               value="@Model.ProEstoque"
+                               required />
+                </div>
+            
+        
+  
+
+
+
+            <div>
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="/produto/index" class="btn btn-primary">Voltar</a>
+
+            </div>
+
+
+        </div>
+    </form>
+</div>

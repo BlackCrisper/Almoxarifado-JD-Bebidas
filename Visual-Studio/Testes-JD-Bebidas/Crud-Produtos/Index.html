@@ -1,0 +1,76 @@
+@model IEnumerable<.Models.Produto>
+
+
+    @{
+        ViewBag.Title = "Index";
+    }
+    
+    
+    
+    <div>
+    
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Máximo</th>
+                    <th scope="col">Mínimo</th>
+                    <th scope="col">Em estoque</th>
+                    <th scope="col">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+    
+                    <tr>
+                        <th scope="row">@item.</th>
+                        <td>@item.</td>
+                        <td>@item.</td>
+                        <td>@item.</td>
+                        <td>@item.</td>
+    
+                        @if (item.ProEstoque < item.ProMinimo)
+                         {
+                            <td style="background-color:darkred;
+                                                  color:white;">
+                                @item.ProEstoque
+    
+                            </td>
+    
+                        }
+                        else
+                        {
+                            <td>@item.ProEstoque</td>
+                        }
+    
+    
+                        <td>
+    
+                            <a href="/produto/edit?id=@item."><button type="button" class="btn btn-warning">Editar</button></a>
+                            <a href="/produto/exibir?id=@item."><button type="button" class="btn btn-primary">Exibir</button></a>
+                            <a href="/produto/deletar?id=@item."><button type="button" class="btn btn-danger">Deletar</button></a>
+    
+                        </td>
+                    </tr>
+                }
+    
+    
+    
+    
+            </tbody>
+        </table>
+    
+    
+    </div>
+    
+    
+    
+    
+        <p><a class="btn btn-info" href="/Produto/Criar">Criar novo Produto &raquo;</a></p>
+    
+    
+    
+    <p><a href="/home/projetos" class="btn btn-primary">Voltar &raquo;</a></p>
+    

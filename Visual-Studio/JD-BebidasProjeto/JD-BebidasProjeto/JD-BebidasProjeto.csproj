@@ -243,6 +243,7 @@
     <Content Include="Views\Categorias\Deletar.cshtml" />
     <Content Include="Views\Categorias\Criar.cshtml" />
     <Content Include="Views\Categorias\Index.cshtml" />
+    <Content Include="Views\Categorias\Testes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

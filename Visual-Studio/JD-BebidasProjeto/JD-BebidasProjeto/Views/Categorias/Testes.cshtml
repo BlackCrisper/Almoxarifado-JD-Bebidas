@@ -1,0 +1,68 @@
+﻿@model IEnumerable<JD_BebidasProjeto.Models.CATEGORIA>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .teste {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYwRtXAJCZtVSTu93qquYL4wTJWxa-UFmcvw&usqp=CAU);
+            width: 300px;
+            border: 15px solid;
+            padding: 50px;
+            margin: 20px;
+        }
+
+        .h2 {
+            color: white;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: white;
+        }
+
+        .texto {
+            color: white;
+        }
+
+        .titulo {
+            color: black;
+            text-align: center;
+            font-size: 500%;
+        }
+    </style>
+</head>
+<body class="fundo">
+
+    <h2 class="titulo">DashBoard</h2>
+
+    
+
+    <div>
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-2 teste">
+             
+                    <div>
+                        
+                        <td class="texto">
+                            @item.CATDESCRICAO:
+                        </td>
+
+
+
+
+                    </div>
+               
+
+            </div>
+
+
+        }
+        <br />
+    </div>
+
+
+</body>
+</html>

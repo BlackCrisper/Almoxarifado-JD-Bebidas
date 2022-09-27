@@ -5,55 +5,112 @@
     ViewBag.Title = "Index";
 }
 
+<body class="fundo">
+
+    <p><a class="btn btn-info" href="/Categorias/Criar">Criar nova Categoria &raquo;</a></p>
+    <div >
 
 
-<div>
-    <p><a class="btn btn-info" href="/Categorias/Criar">Criar novo Produto &raquo;</a></p>
-
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Descrição</th>
-               
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-
+        <table class="table">
+            <thead class="thead-dark">
                 <tr>
-                    <th scope="row">@item.CATID</th>
-                    <td>@item.CATDESCRICAO</td>
+                    <th scope="col">#</th>
+                    <th scope="col">Descrição</th>
 
-
-
-
-
-
-                    <td>
-
-                        <a href="/categorias/editar?id=@item.CATID"><button type="button" class="btn btn-warning">Editar</button></a>
-                        <a href="/categorias/deletar?id=@item.CATID"><button type="button" class="btn btn-danger">Deletar</button></a>
-
-                    </td>
                 </tr>
-            }
+            </thead>
+            <tbody class="teste">
+                @foreach (var item in Model)
+                {
 
-
-
-
-        </tbody>
-    </table>
-
-
-</div>
+                    <tr>
+                        <th scope="row">@item.CATID</th>
+                        <td>@item.CATDESCRICAO</td>
 
 
 
 
 
 
+                        <td class="butoes">
+
+                            <a href="/categorias/editar?id=@item.CATID"><button type="button" class="btn btn-warning">Editar</button></a>
+                            <a href="/categorias/deletar?id=@item.CATID"><button type="button" class="btn btn-danger">Deletar</button></a>
+
+                        </td>
+                    </tr>
+                }
 
 
-<p><a href="/home/projetos" class="btn btn-primary">Voltar &raquo;</a></p>
+
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <p><a href="/home/projetos" class="btn btn-primary">Voltar &raquo;</a></p>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+    .fundo {
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJ1LXyY4CIm2g1N_UNSvBCU6NQGF5BwAo0Q&usqp=CAU);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .teste {
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYwRtXAJCZtVSTu93qquYL4wTJWxa-UFmcvw&usqp=CAU);
+        width: 200px;
+        border: 10px solid;
+        padding: 30px;
+        margin: 10px;
+    }
+
+    .h2 {
+        color: white;
+    }
+
+    .subtitulo {
+        text-align: center;
+        color: white;
+    }
+
+    
+
+    th {
+        color: white;
+    }
+
+    td {
+        color: white;
+    }
+
+    .titulo {
+        color: black;
+        text-align: center;
+        font-size: 500%;
+    }
+</style>

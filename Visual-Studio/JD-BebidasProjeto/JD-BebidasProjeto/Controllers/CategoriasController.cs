@@ -97,6 +97,11 @@ namespace JD_BebidasProjeto.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Testes()
+        {
+            return View();
+        }
+
 
 
 

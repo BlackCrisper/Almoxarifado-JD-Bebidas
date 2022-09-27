@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDJDBEBIDASModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATEGORIA">
+    <Key>
+      <PropertyRef Name="CATID" />
+    </Key>
+    <Property Name="CATID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CATDESCRICAO" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ENTRADA">
+    <Key>
+      <PropertyRef Name="ENTID" />
+    </Key>
+    <Property Name="ENTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ENTDATA" Type="datetime" Nullable="false" />
+    <Property Name="ENTORIGEM" Type="varchar" MaxLength="100" />
+    <Property Name="ENTOBSERVACAO" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ITENSENTRADA">
+    <Key>
+      <PropertyRef Name="ITEID" />
+    </Key>
+    <Property Name="ITEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PTID" Type="int" Nullable="false" />
+    <Property Name="ITEQUANTIDADE" Type="int" Nullable="false" />
+    <Property Name="ITEPRECO" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ITETOTAL" Type="numeric" Precision="29" Scale="2" StoreGeneratedPattern="Computed" />
+    <Property Name="ENTID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ITENSSAIDA">
+    <Key>
+      <PropertyRef Name="ITSID" />
+    </Key>
+    <Property Name="ITSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PTID" Type="int" Nullable="false" />
+    <Property Name="ITSQUANTIDADE" Type="int" Nullable="false" />
+    <Property Name="ITSPRECO" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ITSTOTAL" Type="numeric" Precision="29" Scale="2" StoreGeneratedPattern="Computed" />
+    <Property Name="SAIID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUTO">
+    <Key>
+      <PropertyRef Name="PROID" />
+    </Key>
+    <Property Name="PROID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRODESCRICAO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CATID" Type="int" Nullable="false" />
+    <Property Name="PROIMAGEM" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="PROTIPO">
+    <Key>
+      <PropertyRef Name="PTID" />
+    </Key>
+    <Property Name="PTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROID" Type="int" Nullable="false" />
+    <Property Name="TIPID" Type="int" Nullable="false" />
+    <Property Name="PTMINIMO" Type="int" Nullable="false" />
+    <Property Name="PTMAXIMO" Type="int" Nullable="false" />
+    <Property Name="PTESTOQUE" Type="int" Nullable="false" />
+    <Property Name="PTIMAGEM" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="SAIDA">
+    <Key>
+      <PropertyRef Name="SAIID" />
+    </Key>
+    <Property Name="SAIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SAIDATA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TIPO">
+    <Key>
+      <PropertyRef Name="TIPID" />
+    </Key>
+    <Property Name="TIPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIPNOME" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__ITENSENTR__ENTID__3C69FB99">
+    <End Role="ENTRADA" Type="Self.ENTRADA" Multiplicity="1" />
+    <End Role="ITENSENTRADA" Type="Self.ITENSENTRADA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ENTRADA">
+        <PropertyRef Name="ENTID" />
+      </Principal>
+      <Dependent Role="ITENSENTRADA">
+        <PropertyRef Name="ENTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ITENSENTRA__PTID__3B75D760">
+    <End Role="PROTIPO" Type="Self.PROTIPO" Multiplicity="1" />
+    <End Role="ITENSENTRADA" Type="Self.ITENSENTRADA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROTIPO">
+        <PropertyRef Name="PTID" />
+      </Principal>
+      <Dependent Role="ITENSENTRADA">
+        <PropertyRef Name="PTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ITENSSAID__SAIID__44FF419A">
+    <End Role="SAIDA" Type="Self.SAIDA" Multiplicity="1" />
+    <End Role="ITENSSAIDA" Type="Self.ITENSSAIDA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SAIDA">
+        <PropertyRef Name="SAIID" />
+      </Principal>
+      <Dependent Role="ITENSSAIDA">
+        <PropertyRef Name="SAIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ITENSSAIDA__PTID__440B1D61">
+    <End Role="PROTIPO" Type="Self.PROTIPO" Multiplicity="1" />
+    <End Role="ITENSSAIDA" Type="Self.ITENSSAIDA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROTIPO">
+        <PropertyRef Name="PTID" />
+      </Principal>
+      <Dependent Role="ITENSSAIDA">
+        <PropertyRef Name="PTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUTO__CATID__2A4B4B5E">
+    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
+    <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIA">
+        <PropertyRef Name="CATID" />
+      </Principal>
+      <Dependent Role="PRODUTO">
+        <PropertyRef Name="CATID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PROTIPO__PROID__35BCFE0A">
+    <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="1" />
+    <End Role="PROTIPO" Type="Self.PROTIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUTO">
+        <PropertyRef Name="PROID" />
+      </Principal>
+      <Dependent Role="PROTIPO">
+        <PropertyRef Name="PROID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PROTIPO__TIPID__36B12243">
+    <End Role="TIPO" Type="Self.TIPO" Multiplicity="1" />
+    <End Role="PROTIPO" Type="Self.PROTIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO">
+        <PropertyRef Name="TIPID" />
+      </Principal>
+      <Dependent Role="PROTIPO">
+        <PropertyRef Name="TIPID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDJDBEBIDASModelStoreContainer">
+    <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ENTRADA" EntityType="Self.ENTRADA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITENSENTRADA" EntityType="Self.ITENSENTRADA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITENSSAIDA" EntityType="Self.ITENSSAIDA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUTO" EntityType="Self.PRODUTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROTIPO" EntityType="Self.PROTIPO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAIDA" EntityType="Self.SAIDA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPO" EntityType="Self.TIPO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ITENSENTR__ENTID__3C69FB99" Association="Self.FK__ITENSENTR__ENTID__3C69FB99">
+      <End Role="ENTRADA" EntitySet="ENTRADA" />
+      <End Role="ITENSENTRADA" EntitySet="ITENSENTRADA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ITENSENTRA__PTID__3B75D760" Association="Self.FK__ITENSENTRA__PTID__3B75D760">
+      <End Role="PROTIPO" EntitySet="PROTIPO" />
+      <End Role="ITENSENTRADA" EntitySet="ITENSENTRADA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ITENSSAID__SAIID__44FF419A" Association="Self.FK__ITENSSAID__SAIID__44FF419A">
+      <End Role="SAIDA" EntitySet="SAIDA" />
+      <End Role="ITENSSAIDA" EntitySet="ITENSSAIDA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ITENSSAIDA__PTID__440B1D61" Association="Self.FK__ITENSSAIDA__PTID__440B1D61">
+      <End Role="PROTIPO" EntitySet="PROTIPO" />
+      <End Role="ITENSSAIDA" EntitySet="ITENSSAIDA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUTO__CATID__2A4B4B5E" Association="Self.FK__PRODUTO__CATID__2A4B4B5E">
+      <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+      <End Role="PRODUTO" EntitySet="PRODUTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PROTIPO__PROID__35BCFE0A" Association="Self.FK__PROTIPO__PROID__35BCFE0A">
+      <End Role="PRODUTO" EntitySet="PRODUTO" />
+      <End Role="PROTIPO" EntitySet="PROTIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PROTIPO__TIPID__36B12243" Association="Self.FK__PROTIPO__TIPID__36B12243">
+      <End Role="TIPO" EntitySet="TIPO" />
+      <End Role="PROTIPO" EntitySet="PROTIPO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

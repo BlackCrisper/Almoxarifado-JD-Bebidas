@@ -1,7 +1,29 @@
-﻿
+﻿@model JD_BebidasProjeto.Models.PRODUTO
+
 @{
     ViewBag.Title = "Deletar";
 }
 
-<h2>Deletar</h2>
+<h2>Deletando</h2>
 
+<div>
+    <form action="/Produto/ConfirmeDelete?id=@Model.PROID" method="post">
+        <div>
+            <class ="form-group">
+                <label>Descrição</label>
+                <label>@Model.PRODESCRICAO</label>
+        </div>
+
+     
+
+        <br />
+
+        <div>
+            <p><a href="/produto/index" class="btn btn-primary">Voltar &raquo;</a></p>
+            <button type="submit" class="btn btn-danger">Deletar</button>
+        </div>
+
+
+
+    </form>
+</div>

@@ -1,7 +1,60 @@
-﻿
+﻿@model IEnumerable < JD_BebidasProjeto.Models.PRODUTO >
+
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
+
+<div>
+    <p><a class="btn btn-info" href="/Produto/Criar">Criar novo Produto &raquo;</a></p>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Imagem </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <th scope="row">@item.PROID</th>
+                    <td>@item.PRODESCRICAO</td>
+                    <td>@item.PROIMAGEM</td>
+
+
+
+
+
+
+                    <td>
+
+                        <a href="/produto/editar?id=@item.PROID"><button type="button" class="btn btn-warning">Editar</button></a>
+                        <a href="/produto/deletar?id=@item.PROID"><button type="button" class="btn btn-danger">Deletar</button></a>
+
+                    </td>
+                </tr>
+            }
+
+
+
+
+        </tbody>
+    </table>
+
+
+</div>
+
+
+
+
+
+
+
+
+<p><a href="/home/projetos" class="btn btn-primary">Voltar &raquo;</a></p>

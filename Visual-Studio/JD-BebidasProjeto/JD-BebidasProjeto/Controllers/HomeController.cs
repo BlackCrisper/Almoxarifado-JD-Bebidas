@@ -26,5 +26,20 @@ namespace JD_BebidasProjeto.Controllers
 
             return View();
         }
+
+        public ActionResult Projetos()
+        {
+            return View();
+        }
+
+        public ActionResult Fazendo()
+        {
+            return View();
+        }
+
+        public ActionResult Erro()
+        {
+            return View();
+        }
     }
 }

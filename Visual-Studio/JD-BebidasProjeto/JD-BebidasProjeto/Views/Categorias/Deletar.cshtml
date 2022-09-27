@@ -1,0 +1,29 @@
+﻿@model JD_BebidasProjeto.Models.CATEGORIA
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>Deletando</h2>
+
+<div>
+    <form action="/Categorias/ConfirmeDelete?id=@Model.CATID" method="post">
+        <div>
+            <class ="form-group">
+                <label>Descrição</label>
+                <label>@Model.CATDESCRICAO</label>
+        </div>
+
+     
+
+        <br />
+
+        <div>
+            <p><a href="/Categorias/index" class="btn btn-primary">Voltar &raquo;</a></p>
+            <button type="submit" class="btn btn-danger">Deletar</button>
+        </div>
+
+
+
+    </form>
+</div>

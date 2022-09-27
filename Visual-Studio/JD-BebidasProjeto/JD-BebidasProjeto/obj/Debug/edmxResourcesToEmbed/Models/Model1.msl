@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDJDBEBIDASModelStoreContainer" CdmEntityContainer="BDJDBEBIDAS">
+    <EntitySetMapping Name="CATEGORIA">
+      <EntityTypeMapping TypeName="BDJDBEBIDASModel.CATEGORIA">
+        <MappingFragment StoreEntitySet="CATEGORIA">
+          <ScalarProperty Name="CATID" ColumnName="CATID" />
+          <ScalarProperty Name="CATDESCRICAO" ColumnName="CATDESCRICAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ENTRADA">
+      <EntityTypeMapping TypeName="BDJDBEBIDASModel.ENTRADA">
+        <MappingFragment StoreEntitySet="ENTRADA">
+          <ScalarProperty Name="ENTID" ColumnName="ENTID" />
+          <ScalarProperty Name="ENTDATA" ColumnName="ENTDATA" />
+          <ScalarProperty Name="ENTORIGEM" ColumnName="ENTORIGEM" />
+          <ScalarProperty Name="ENTOBSERVACAO" ColumnName="ENTOBSERVACAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITENSENTRADA">
+      <EntityTypeMapping TypeName="BDJDBEBIDASModel.ITENSENTRADA">
+        <MappingFragment StoreEntitySet="ITENSENTRADA">
+          <ScalarProperty Name="ITEID" ColumnName="ITEID" />
+          <ScalarProperty Name="PTID" ColumnName="PTID" />
+          <ScalarProperty Name="ITEQUANTIDADE" ColumnName="ITEQUANTIDADE" />
+          <ScalarProperty Name="ITEPRECO" ColumnName="ITEPRECO" />
+          <ScalarProperty Name="ITETOTAL" ColumnName="ITETOTAL" />
+          <ScalarProperty Name="ENTID" ColumnName="ENTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITENSSAIDA">
+      <EntityTypeMapping TypeName="BDJDBEBIDASModel.ITENSSAIDA">
+        <MappingFragment StoreEntitySet="ITENSSAIDA">
+          <ScalarProperty Name="ITSID" ColumnName="ITSID" />
+          <ScalarProperty Name="PTID" ColumnName="PTID" />
+          <ScalarProperty Name="ITSQUANTIDADE" ColumnName="ITSQUANTIDADE" />
+          <ScalarProperty Name="ITSPRECO" ColumnName="ITSPRECO" />
+          <ScalarProperty Name="ITSTOTAL" ColumnName="ITSTOTAL" />
+          <ScalarProperty Name="SAIID" ColumnName="SAIID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUTO">
+      <EntityTypeMapping TypeName="BDJDBEBIDASModel.PRODUTO">
+        <MappingFragment StoreEntitySet="PRODUTO">
+          <ScalarProperty Name="PROID" ColumnName="PROID" />
+          <ScalarProperty Name="PRODESCRICAO" ColumnName="PRODESCRICAO" />
+          <ScalarProperty Name="CATID" ColumnName="CATID" />
+          <ScalarProperty Name="PROIMAGEM" ColumnName="PROIMAGEM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROTIPO">
+      <EntityTypeMapping TypeName="BDJDBEBIDASModel.PROTIPO">
+        <MappingFragment StoreEntitySet="PROTIPO">
+          <ScalarProperty Name="PTID" ColumnName="PTID" />
+          <ScalarProperty Name="PROID" ColumnName="PROID" />
+          <ScalarProperty Name="TIPID" ColumnName="TIPID" />
+          <ScalarProperty Name="PTMINIMO" ColumnName="PTMINIMO" />
+          <ScalarProperty Name="PTMAXIMO" ColumnName="PTMAXIMO" />
+          <ScalarProperty Name="PTESTOQUE" ColumnName="PTESTOQUE" />
+          <ScalarProperty Name="PTIMAGEM" ColumnName="PTIMAGEM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAIDA">
+      <EntityTypeMapping TypeName="BDJDBEBIDASModel.SAIDA">
+        <MappingFragment StoreEntitySet="SAIDA">
+          <ScalarProperty Name="SAIID" ColumnName="SAIID" />
+          <ScalarProperty Name="SAIDATA" ColumnName="SAIDATA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO">
+      <EntityTypeMapping TypeName="BDJDBEBIDASModel.TIPO">
+        <MappingFragment StoreEntitySet="TIPO">
+          <ScalarProperty Name="TIPID" ColumnName="TIPID" />
+          <ScalarProperty Name="TIPNOME" ColumnName="TIPNOME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

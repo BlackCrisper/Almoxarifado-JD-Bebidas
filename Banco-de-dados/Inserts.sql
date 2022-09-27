@@ -17,5 +17,15 @@ insert PRODUTO(CATID,PRODESCRICAO) values (3,'Crystal')
 insert PRODUTO(CATID,PRODESCRICAO) values (3,'Lev')
 
 
+--Inserindo dados em Tipo
+
+insert TIPO values ('1 Litro')
+insert TIPO values ('2 Litros')
+insert TIPO values ('Lata')
+insert TIPO values ('500 ML')
+
+
+
+
 
 

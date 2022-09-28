@@ -1,0 +1,113 @@
+﻿@model IEnumerable<JD_BebidasProjeto.Models.PROTIPO>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<body class="fundo">
+
+    <h2>Produto Tipo</h2>
+
+    <p><a class="btn btn-info" href="/ProTipo/Criar">Criar novo Tipo &raquo;</a></p>
+    <div>
+
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Max</th>
+                    <th scope="col">Min</th>
+                    <th scope="col">Estoque</th>
+                    <th scope="col">Imagem</th>
+
+                </tr>
+            </thead>
+            <tbody class="teste">
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td scope="row">@item.PTID</td>
+                        <td>@item.PRODUTO.PRODESCRICAO</td>
+                        <td> @item.TIPO.TIPNOME</td>
+                        <td> @item.PTMAXIMO</td>
+                        <td> @item.PTMINIMO</td>
+
+
+                        @if (item.PTESTOQUE < item.PTMINIMO)
+                        {
+                            <td style="background-color:darkred;
+                                              color:white;">
+                                @item.PTESTOQUE
+
+                            </td>
+
+                        }
+                        else
+                        {
+                            <td style="background-color:darkgreen;
+                                              color:white;">
+                        
+                                 @item.PTESTOQUE
+                            
+                            </td>
+                        }
+
+                        <td>
+                            @{
+                                if (item.PTIMAGEM != null)
+                                {
+                                    var base64 = Convert.ToBase64String(item.PTIMAGEM);
+                                    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                                    <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
+                                }
+
+                            }
+
+                        </td>
+
+
+
+                        <td class="butoes">
+
+                            <a href="/ProTipo/editar?id=@item.PTID"><button type="button" class="btn btn-warning">Editar</button></a>
+                            <a href="/ProTipo/deletar?id=@item.PTID"><button type="button" class="btn btn-danger">Deletar</button></a>
+
+                        </td>
+                    </tr>
+                }
+
+
+
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <p><a href="/home/projetos" class="btn btn-primary">Voltar &raquo;</a></p>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+

@@ -34,3 +34,8 @@
 
 	insert SAIDA values (02/20/22)
 
+
+	--Inserindo dados em ProTipo
+
+	insert PROTIPO (PROID,TIPID,PTMAXIMO,PTMINIMO,PTESTOQUE) values (9,1,150,10,50)
+

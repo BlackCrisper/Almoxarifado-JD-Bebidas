@@ -1,4 +1,4 @@
-﻿@model JD_BebidasProjeto.Models.CATEGORIA
+﻿@model JD_BebidasProjeto.Models.TIPO
 
 @{
     ViewBag.Title = "Deletar";
@@ -7,11 +7,11 @@
 <h2>Deletando</h2>
 
 <div>
-    <form action="/Categorias/ConfirmeDelete?id=@Model.CATID" method="post">
+    <form action="/Tipo/ConfirmeDelete?id=@Model.TIPID" method="post">
         <div>
             <class ="form-group">
                 <label>Descrição</label>
-                <label>@Model.CATDESCRICAO</label>
+                <label>@Model.TIPNOME</label>
         </div>
 
      
@@ -19,7 +19,7 @@
         <br />
 
         <div>
-            <p><a href="/Categorias/index" class="btn btn-primary">Voltar &raquo;</a></p>
+            <p><a href="/Tipo/index" class="btn btn-primary">Voltar &raquo;</a></p>
             <button type="submit" class="btn btn-danger">Deletar</button>
         </div>
 

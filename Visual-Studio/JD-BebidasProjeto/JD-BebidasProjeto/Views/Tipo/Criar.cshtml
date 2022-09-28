@@ -1,4 +1,4 @@
-﻿@model IEnumerable <JD_BebidasProjeto.Models.CATEGORIA>
+﻿@model IEnumerable <JD_BebidasProjeto.Models.TIPO>
 
 @{
     ViewBag.Title = "Criar";
@@ -7,7 +7,7 @@
 <h2>Criar</h2>
 
 <div>
-    <form action="/Categorias/Criar" method="post">
+    <form action="/Tipo/Criar" method="post">
         <div>
             <class ="form-group">
                 <label for="descricao">Descrição</label>
@@ -22,7 +22,7 @@
 
         <div>
             <button type="submit" class="btn btn-success">Salvar</button>
-            <a href="/Categorias/index" class="btn btn-primary">Voltar</a>
+            <a href="/Tipo/index" class="btn btn-primary">Voltar</a>
 
         </div>
 

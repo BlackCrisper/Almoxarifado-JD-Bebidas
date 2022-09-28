@@ -57,15 +57,17 @@ namespace JD_BebidasProjeto.Controllers
         [HttpGet]
         public ActionResult Editar(int? id)
         {
+            ViewBag.listaCategoria = bd.CATEGORIA.ToList();
             PRODUTO prolocalizar = bd.PRODUTO.ToList().Where(x => x.PROID == id).First();
             return View(prolocalizar);
         }
 
         [HttpPost]
-        public ActionResult Editar(int? id, string descricao)
+        public ActionResult Editar(int? id, string descricao, int categoria)
         {
             PRODUTO proatualizar = bd.PRODUTO.ToList().Where(x => x.PROID == id).First();
             proatualizar.PRODESCRICAO = descricao;
+            proatualizar.CATID = categoria;
 
 
             bd.Entry(proatualizar).State = EntityState.Modified;

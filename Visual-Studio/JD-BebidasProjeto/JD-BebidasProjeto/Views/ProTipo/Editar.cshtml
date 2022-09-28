@@ -1,0 +1,90 @@
+﻿@model  JD_BebidasProjeto.Models.PROTIPO
+
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editando</h2>
+
+<div>
+    <form action="/ProTipo/Editar?id=@Model.PTID" method="post">
+
+
+
+
+        <div>
+            <label for="produto">Produto: </label>
+            <select type="text" class="form-control" id="produto" name="produto">
+
+                @foreach (var item in ViewBag.listaProduto)
+                {
+                    <option value="@item.PROID">@item.PRODESCRICAO</option>
+                }
+
+            </select>
+
+        </div>
+
+        <div>
+            <label for="tipo">Tipo: </label>
+            <select type="text" class="form-control" id="tipo" name="tipo">
+
+                @foreach (var item in ViewBag.listaTipo)
+                {
+                    <option value="@item.TIPID">@item.TIPNOME</option>
+                }
+
+            </select>
+
+        </div>
+
+        <div>
+            <class ="form-group">
+                <label for="maximo">Máximo</label>
+                <input type="number" class="form-control"
+                       id="maximo" name="maximo" min="0"
+                       value="@Model.PTMAXIMO"
+                       required />
+
+        </div>
+
+        <div>
+            <class ="form-group">
+                <label for="minimo">Mínimo</label>
+                <input type="number" class="form-control"
+                       id="minimo" name="minimo" min="0"
+                       value="@Model.PTMINIMO"
+                       required />
+
+        </div>
+
+        <div>
+            <class ="form-group">
+                <label for="estoque">Estoque</label>
+                <input type="number" class="form-control"
+                       id="estoque" name="estoque" min="0"
+                       value="@Model.PTESTOQUE"
+                       required />
+        </div>
+
+        <div class="form-group">
+            <label for="arquivo">Imagem</label>
+            <input type="file" class="form-control"
+                   id="imagem" name="imagem" re />
+        </div>
+
+        <div>
+
+
+
+            <div>
+                <button type="submit" class="btn btn-success">Salvar</button>
+                <a href="/protipo/index" class="btn btn-primary">Voltar</a>
+
+            </div>
+
+
+        </div>
+    </form>
+</div>

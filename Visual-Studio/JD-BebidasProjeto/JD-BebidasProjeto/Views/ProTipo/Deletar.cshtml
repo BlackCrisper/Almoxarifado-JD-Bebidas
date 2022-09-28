@@ -1,0 +1,53 @@
+﻿@model  JD_BebidasProjeto.Models.PROTIPO
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>Deletando</h2>
+
+<div>
+    <form action="/ProTipo/ConfirmeDelete?id=@Model.PTID" method="post">
+        <div>
+            <class ="form-group">
+                <label>Produto</label>
+                <label>@Model.PRODUTO.PRODESCRICAO</label>
+        </div>
+
+        <div>
+            <class ="form-group">
+                <label>Tipo</label>
+                <label>@Model.TIPO.TIPNOME</label>
+        </div>
+        <div>
+            <class ="form-group">
+                <label>Mínimo</label>
+                <label>@Model.PTMAXIMO</label>
+        </div>
+        <div>
+            <class ="form-group">
+                <label>Máximo</label>
+                <label>@Model.PTMINIMO</label>
+        </div>
+        <div>
+            <class ="form-group">
+                <label>Estoque</label>
+                <label>@Model.PTESTOQUE</label>
+        </div>
+
+
+        <div>
+
+
+        </div>
+
+        <div>
+            <p><a href="/protipo/index" class="btn btn-primary">Voltar &raquo;</a></p>
+            <button type="submit" class="btn btn-danger">Deletar</button>
+        </div>
+
+
+
+    </form>
+</div>
+

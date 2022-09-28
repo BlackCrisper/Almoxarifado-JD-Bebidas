@@ -14,6 +14,27 @@
                 <label>@Model.PRODESCRICAO</label>
         </div>
 
+        <div>
+            <class="form-group">
+
+                <label>Imagem</label>
+                <label>
+                
+
+                    @{
+                        if (Model.PROIMAGEM != null)
+                        {
+                            var base64 = Convert.ToBase64String(Model.PROIMAGEM);
+                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                            <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
+                        }
+
+                    }
+                </label>
+            </class>
+
+        </div>
+
      
 
         <br />

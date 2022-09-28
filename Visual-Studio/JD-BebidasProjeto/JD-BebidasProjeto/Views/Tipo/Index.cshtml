@@ -1,4 +1,4 @@
-﻿@model IEnumerable < JD_BebidasProjeto.Models.CATEGORIA >
+﻿@model IEnumerable < JD_BebidasProjeto.Models.TIPO >
 
 
 @{
@@ -7,7 +7,9 @@
 
 <body class="fundo">
 
-    <p><a class="btn btn-info" href="/Categorias/Criar">Criar nova Categoria &raquo;</a></p>
+    <h2>Tipo </h2>
+
+    <p><a class="btn btn-info" href="/Tipo/Criar">Criar novo Tipo &raquo;</a></p>
     <div >
 
 
@@ -24,8 +26,8 @@
                 {
 
                     <tr>
-                        <th scope="row">@item.CATID</th>
-                        <td>@item.CATDESCRICAO</td>
+                        <th scope="row">@item.TIPID</th>
+                        <td>@item.TIPNOME</td>
 
 
 
@@ -34,8 +36,8 @@
 
                         <td class="butoes">
 
-                            <a href="/categorias/editar?id=@item.CATID"><button type="button" class="btn btn-warning">Editar</button></a>
-                            <a href="/categorias/deletar?id=@item.CATID"><button type="button" class="btn btn-danger">Deletar</button></a>
+                            <a href="/Tipo/editar?id=@item.TIPID"><button type="button" class="btn btn-warning">Editar</button></a>
+                            <a href="/Tipo/deletar?id=@item.TIPID"><button type="button" class="btn btn-danger">Deletar</button></a>
 
                         </td>
                     </tr>

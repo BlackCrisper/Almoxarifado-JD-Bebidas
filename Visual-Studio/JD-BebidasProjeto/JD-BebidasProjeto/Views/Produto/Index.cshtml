@@ -15,6 +15,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Descrição</th>
+                <th scope="col">Categoria</th>
                 <th scope="col">Imagem </th>
             </tr>
         </thead>
@@ -23,9 +24,21 @@
             {
 
                 <tr>
-                    <th scope="row">@item.PROID</th>
+                    <td scope="row">@item.PROID</td>
                     <td>@item.PRODESCRICAO</td>
-                    <td>@item.PROIMAGEM</td>
+                    <td> @item.CATEGORIA.CATDESCRICAO</td>
+                    <td>
+                        @{
+                            if (item.PROIMAGEM != null)
+                            {
+                                var base64 = Convert.ToBase64String(item.PROIMAGEM);
+                                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                                <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
+                            }
+
+                        }
+
+                    </td>
 
 
 
